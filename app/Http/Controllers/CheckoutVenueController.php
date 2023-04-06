@@ -33,7 +33,7 @@ class CheckoutVenueController extends Controller
         $checkoutVenue->email = $request->email;
         $checkoutVenue->venue_id = $id;
         $checkoutVenue->amount = $venue->price;
-        $checkoutVenue->user_id = $venue->user_id ?? null;
+        $checkoutVenue->user_id = \Auth::id() ?? null;
         $checkoutVenue->save();
 
         return redirect()->route('venue.details',['id' => $venue->id,'checkout' => $venue->price * 100, 'checkout_pay' => true]);

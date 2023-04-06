@@ -25,7 +25,8 @@
             <img src="https://res.cloudinary.com/macxenon/image/upload/v1631570592/Run_-_Health_qcghbu.png" class="btn-"/>
           </div>
         </div>
-        <div class="w-full mt-20 mr-0 mb-0 ml-0 relative z-10 max-w-2xl lg:mt-0 lg:w-5/12">
+        <form method="POST" action="{{route('request.venue.store')}}" class="w-full mt-20 mr-0 mb-0 ml-0 relative z-10 max-w-2xl lg:mt-0 lg:w-5/12">
+          @csrf
           <div class="flex flex-col items-start justify-start pt-10 pr-10 pb-10 pl-10 bg-white shadow-2xl rounded-xl
               relative z-10">
             <p class="w-full text-4xl font-medium text-center leading-snug font-serif">Request For A Venue</p>
@@ -33,44 +34,57 @@
               <div class="relative">
                 <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600
                     absolute">Username</p>
-                <input placeholder="John" type="text" class="border placeholder-gray-400 focus:outline-none
+                <input placeholder="John" type="text" name="username" class="border placeholder-gray-400 focus:outline-none
                     focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                     border-gray-300 rounded-md"/>
               </div>
+              @foreach ($errors->get('username') as $error)    
+                <p class="text-pink-600">{{$error}}</p>
+              @endforeach
+              
               <div class="relative">
                 <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">Email</p>
-                <input placeholder="123@ex.com" type="text" class="border placeholder-gray-400 focus:outline-none
+                <input placeholder="123@ex.com" type="text" name="email" class="border placeholder-gray-400 focus:outline-none
                     focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                     border-gray-300 rounded-md"/>
               </div>
+              @foreach ($errors->get('email') as $error)    
+              <p class="text-pink-600">{{$error}}</p>
+              @endforeach
               <div class="relative">
                 <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600
                     absolute">Venue Name</p>
-                <input placeholder="name ... " type="password" class="border placeholder-gray-400 focus:outline-none
+                <input placeholder="name ... " type="text" name="venue_name" class="border placeholder-gray-400 focus:outline-none
                     focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                     border-gray-300 rounded-md"/>
               </div>
-
+              @foreach ($errors->get('venue_name') as $error)    
+              <p class="text-pink-600">{{$error}}</p>
+              @endforeach
               <div class="relative">
                 <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600
                     absolute">Capacity</p>
-                <input placeholder="capacity ... " type="password" class="border placeholder-gray-400 focus:outline-none
+                <input placeholder="capacity ... " type="text" name="capacity" class="border placeholder-gray-400 focus:outline-none
                     focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                     border-gray-300 rounded-md"/>
               </div>
-              
+              @foreach ($errors->get('capacity') as $error)    
+              <p class="text-pink-600">{{$error}}</p>
+              @endforeach
               <div class="relative">
                 <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600
                     absolute">Price</p>
-                <input placeholder="price ... " type="password" class="border placeholder-gray-400 focus:outline-none
+                <input placeholder="price ... " type="text" name="price" class="border placeholder-gray-400 focus:outline-none
                     focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                     border-gray-300 rounded-md"/>
               </div>
-              
+              @foreach ($errors->get('price') as $error)    
+              <p class="text-pink-600">{{$error}}</p>
+              @endforeach
               <div class="relative">
                 <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600
                     absolute">Choose Your Category</p>
-                    <select name="" id="" class="border placeholder-gray-400 focus:outline-none
+                    <select name="category" id="" class="border placeholder-gray-400 focus:outline-none
                     focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                     border-gray-300 rounded-md">
                         @foreach ($categories as $category)
@@ -80,11 +94,13 @@
                     </select>
 
               </div>
-
+              @foreach ($errors->get('category') as $error)    
+              <p class="text-pink-600">{{$error}}</p>
+              @endforeach
               <div class="relative">
                 <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600
                     absolute">Choose Your Event</p>
-                    <select name="" id="" class="border placeholder-gray-400 focus:outline-none
+                    <select name="event" id="" class="border placeholder-gray-400 focus:outline-none
                     focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                     border-gray-300 rounded-md">
                         @foreach ($events as $event)
@@ -95,11 +111,13 @@
 
               </div>
 
-              
+              @foreach ($errors->get('event') as $error)    
+              <p class="text-pink-600">{{$error}}</p>
+              @endforeach
               <div class="relative">
                 <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600
                     absolute">Choose Your Location</p>
-                    <select name="" id="" class="border placeholder-gray-400 focus:outline-none
+                    <select name="location" id="" class="border placeholder-gray-400 focus:outline-none
                     focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
                     border-gray-300 rounded-md">
                         @foreach ($locations as $location)
@@ -109,10 +127,12 @@
                     </select>
 
               </div>
-
+              @foreach ($errors->get('location') as $error)    
+              <p class="text-pink-600">{{$error}}</p>
+              @endforeach
               <div class="relative">
-                <a class="w-full inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-indigo-500
-                    rounded-lg transition duration-200 hover:bg-indigo-600 ease">Submit</a>
+                <button type="submit" class="w-full inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-indigo-500
+                    rounded-lg transition duration-200 hover:bg-indigo-600 ease">Submit</button>
               </div>
             </div>
           </div>
@@ -176,7 +196,7 @@
               r="2.719"/><circle cx="27.333" cy="3.006" r="2.72"/><circle cx="39.369" cy="3.006" r="2.72"/><circle
               cx="51.405" cy="3.006" r="2.72"/><circle cx="63.441" cy="3.006" r="2.72"/><circle cx="75.479" cy="3.006"
               r="2.72"/><circle cx="87.514" cy="3.006" r="2.719"/></g></g></g></g></svg>
-        </div>
+        </form>
       </div>
     </div>
   </div>

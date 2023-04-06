@@ -7,6 +7,8 @@ use App\Models\UserReview;
 use App\Models\Event;
 use App\Models\Category;
 use App\Models\Location;
+use App\Models\VenueRequest;
+
 use Illuminate\Http\Request;
 
 class UserReviewController extends Controller
@@ -51,9 +53,31 @@ class UserReviewController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function requestVenueStore(Request $request)
     {
-        //
+        $request->validate([
+            'username' => ['required'],
+            'email' => ['required','email'],
+            'venue_name' => ['required'],
+            'capacity' => ['required',],
+            'price' => ['required'],
+            'category' => ['required'],
+            'event' => ['required'],
+            'location' => ['required'],
+        ]);
+
+        $venueRequest = new VenueRequest();
+        $venueRequest->username = $request->username; 
+        $venueRequest->email = $request->email;
+        $venueRequest->venue_name = $request->venue_name;
+        $venueRequest->capacity = $request->capacity;
+        $venueRequest->price = $request->price;
+        $venueRequest->category_id = $request->category;
+        $venueRequest->event_id = $request->event;
+        $venueRequest->location_id = $request->location;
+        $venueRequest->save();
+
+        return redirect()->back();
     }
 
     /**
