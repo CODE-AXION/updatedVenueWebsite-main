@@ -10,6 +10,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\CheckoutVenueController;
 use App\Http\Controllers\UserReviewController;
+use App\Http\Controllers\OrderController;
+
 use Illuminate\Support\Facades\Route;
 
 
@@ -40,6 +42,8 @@ Route::post('/checkout/venue/{id?}',[CheckoutVenueController::class,'checkout'])
 
 Route::post('/user/review',[UserReviewController::class,'postUserReview'])->name('user.review');
 
+Route::get('admin/user/review',[UserReviewController::class,'adminUserReview'])->name('admin.user.review');
+
 Route::get('/user/request/venue',[UserReviewController::class,'requestVenue'])->name('request.venue');
 
 Route::post('/user/request/venue/store',[UserReviewController::class,'requestVenueStore'])->name('request.venue.store');
@@ -49,6 +53,12 @@ Route::middleware('adminMiddlware')->group(function () {
 
     //------------- ADMIN DASHBOARD ROUTES ----------------//
     Route::get('admin/dashboard',[DashboardController::class,'dashboard'])->name('admin.dashboard');
+
+    //------------- ORDER ROUTES ----------------//
+    Route::get('admin/orders',[OrderController::class,'orders'])->name('orders.index');
+
+    Route::get('admin/user/review',[UserReviewController::class,'adminUserReview'])->name('admin.user.review');
+
 
     //------------- EVENTS ROUTES ----------------//
     Route::get('admin/events',[EventController::class,'index'])->name('event.index');

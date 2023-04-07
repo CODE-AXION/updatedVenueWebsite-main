@@ -55,6 +55,19 @@
                 </a>
 
 
+                
+                <a class="flex mt-4 items-center px-4 mx-2 py-2  text-white  rounded-md  " href="{{route('orders.index')}}">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-5 h-5 bi bi-box-seam-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M15.528 2.973a.75.75 0 0 1 .472.696v8.662a.75.75 0 0 1-.472.696l-7.25 2.9a.75.75 0 0 1-.557 0l-7.25-2.9A.75.75 0 0 1 0 12.331V3.669a.75.75 0 0 1 .471-.696L7.443.184l.01-.003.268-.108a.75.75 0 0 1 .558 0l.269.108.01.003 6.97 2.789ZM10.404 2 4.25 4.461 1.846 3.5 1 3.839v.4l6.5 2.6v7.922l.5.2.5-.2V6.84l6.5-2.6v-.4l-.846-.339L8 5.961 5.596 5l6.154-2.461L10.404 2Z"/>
+                      </svg>
+    
+
+                    <span class="mx-4 font-medium">Order Management</span>
+                </a>
+
+             
+
                 <a class="flex mt-4 items-center px-4 mx-2 py-2  text-white  rounded-md  " href="{{route('category.index')}}">
 
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-5 h-5 bi bi-bookmark-plus" viewBox="0 0 16 16">
@@ -115,6 +128,17 @@
                         </a>
 
 
+
+                    <a class="flex mt-4 items-center px-4 mx-2 py-2  text-white  rounded-md  " href="{{route('admin.user.review')}}">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-5 h-5 bi bi-star" viewBox="0 0 16 16">
+                            <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
+                            </svg>
+
+
+                            <span class="mx-4 font-medium">Users Reviews</span>
+                    </a>
+                
 
                           <hr class="mt-5 mb-2 border-gray-200 " />
 

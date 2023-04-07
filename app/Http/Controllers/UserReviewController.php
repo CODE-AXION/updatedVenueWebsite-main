@@ -86,9 +86,10 @@ class UserReviewController extends Controller
      * @param  \App\Models\UserReview  $userReview
      * @return \Illuminate\Http\Response
      */
-    public function show(UserReview $userReview)
+    public function adminUserReview(UserReview $userReview)
     {
-        //
+        $reviews = UserReview::all();
+        return view('admin.user_reviews.index')->with('reviews',$reviews);
     }
 
     /**

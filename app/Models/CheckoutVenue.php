@@ -14,4 +14,23 @@ class CheckoutVenue extends Model
     protected $fillable = ['name','user_id','no_of_guests','date','event_id','phone','email','plan_id','venue_id','service_id'];
 
 
+    public function event()
+    {
+        return $this->belongsTo(Event::class);
+    }
+
+    public function service()
+    {
+        return $this->belongsTo(Service::class);
+    }
+
+    public function plan()
+    {
+        return $this->belongsTo(Plan::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
