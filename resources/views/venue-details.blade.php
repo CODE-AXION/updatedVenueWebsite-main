@@ -13,8 +13,8 @@
     @include('layouts.navbar')
 
     <div class="ml-8 my-8"> <b> <a href="{{route('venue.home')}}"> Home </a> </b> \ <a href="{{route('venue.shop')}}"> Venue </a>  \ {{$venue->name}} </div>
-    <div class="container py-10 flex mx-auto px-8 gap-4">
-        <div class="">
+    <div class="container py-10 flex mx-auto px-2 md:px-8 gap-4 flex-col lg:flex-row">
+        <div class="w-full lg:w-8/12">
             <img style="height: 395px" class="mx-auto object-cover" src="https://image.wedmegood.com/resized/1000X/uploads/member/443535/1665662591_DSC_8803.jpg?crop=40,3,2000,1125" alt="">
             <div class="mt-2  shadow-md border p-4">
                 <h1 class="text-xl"> {{$venue->name}} </h1>
@@ -56,7 +56,7 @@
                 </div>
             </div>
         </div>
-        <div class="shadow-lg mx-auto border h-fit border-slate-300 w-4/12 p-4 rounded-md">
+        <div class="shadow-lg mx-auto border h-fit border-slate-300 w-full lg:w-4/12 p-4 rounded-md">
 
             <div class="flex items-center justify-between">
                 <div class="text-xl"> Price Per day Estimate</div>
@@ -64,7 +64,7 @@
             </div>
 
             <div class="flex items-center justify-between py-2  mt-4 border-t border-b">
-                <div class="text-pink-600 text-2xl  "> ₹ 25,000 - ₹ 50,000 </div>
+                <div class="text-pink-600 text-2xl  "> ₹ {{$venue->price}} </div>
                 <div>Plot Price</div>
             </div>
             <form action="{{route('checkout',$venue->id)}}" method="POST">
@@ -189,7 +189,7 @@
             </form>.
 
             @if(request('checkout_pay') == 1)
-            <form action="/pay" method="POST" class="text-center p-2 bg-red-600 text-white rounded mx-auto mt-5">
+            <form action="{{route('venue.details',$venue->id)}}" method="POST" class="text-center p-2 bg-red-600 text-white rounded mx-auto mt-5">
                 <script
                     src="https://checkout.razorpay.com/v1/checkout.js"
                     data-key="rzp_test_9yMCbTx92bJVap"
@@ -207,6 +207,9 @@
         </div>
     </div>
 
+    @include('layouts.footer')
+
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 

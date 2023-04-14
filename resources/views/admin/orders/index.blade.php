@@ -151,7 +151,7 @@
                                             <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap"> {{$order->phone ?? ''}} </td>
                                             <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap"> {{$order->event->name}} </td>
                                             <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap"> {{$order->plan->name ?? 'No Plans '}} </td>
-                                            <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap"> {{$order->venue->name ?? 'No Service Selected'}} </td>
+                                            <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap"> {{$order->venue->name ?? 'No Venues'}} </td>
 
                                             <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap"> {{$order->service->name ?? 'No Service Selected'}} </td>
                                             <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap"> {{$order->amount}} </td>

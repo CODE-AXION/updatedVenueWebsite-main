@@ -1,6 +1,6 @@
    {{-- TOP NAV --}}
-   <div class="bg-pink-700 h-10 flex items-center justify-between">
-    <div class="flex items-center ml-8">
+   <div class="bg-pink-700 flex-col md:flex-row flex items-center justify-between py-2">
+    <div class=" flex items-center ml-8">
         <div class="text-white text-sm">Your Favorite Venue Booking Website</div>
         <div class="text-white ">
             <select name="" id="" class="py-1 px-2 ml-4 w-36 border-none text-slate-700  outline-none rounded-md">
@@ -29,10 +29,10 @@
 
 {{-- BOTTOM NAV --}}
 
-<div class="bg-pink-600 flex gap-2 justify-between">
-    <div class="flex items-center ">
+<div class="bg-pink-600 flex gap-2 justify-between flex-col md:flex-row py-2">
+    <div class="flex items-center flex-col md:flex-row">
         <div class="text-2xl text-white ml-4"> <a href="{{route('venue.home')}}"> Venue Vault </a></div>
-        <div class="flex items-center gap-4 ml-8">
+        <div class="flex items-center gap-4 md:ml-8">
 
             <div class="text-lg group cursor-pointer p-2 rounded-md relative text-white">
                 Venues
@@ -94,7 +94,7 @@
         </div>
     </div>
 
-    <div class="flex mr-4 items-center">
+    <div class="flex justify-between mx-4 md:mx-0 md:justify-right md:mr-4 items-center">
         <div class="bg-pink-700 p-2 rounded-full">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="fill-white w-4 h-4 bi bi-search-heart" viewBox="0 0 16 16">
                 <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z"/>
