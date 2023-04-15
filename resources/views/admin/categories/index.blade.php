@@ -60,12 +60,7 @@
                                                 </button>
                                             </th>
 
-                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 ">
-                                                <button class="flex items-center gap-x-2">
-                                                    <span>Venues</span>
-                                                </button>
-                                            </th>
-
+                                     
 
 
                                             <th scope="col" class="relative py-3.5 px-4">
@@ -91,7 +86,6 @@
                                                 </div>
                                             </td>
                                             <td class="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">{{$category->name}}</td>
-                                            <td class="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">41</td>
 
                                             <td class="px-12 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
                                                 <div class="inline-flex items-center px-3 py-1 rounded-full gap-x-2 bg-emerald-100/60 ">
