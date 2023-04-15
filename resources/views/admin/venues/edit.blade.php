@@ -23,12 +23,13 @@
                     <form class="" enctype="multipart/form-data" action="{{route('venue.update',$venue->id)}}" method="POST">
                         @csrf   
                         @method('PUT')
-               
+                        
+                        <img src="{{asset($venue->image)}}" class="w-72 h-72 object-cover" alt="">
                         <h1 class="text-3xl mt-4 mb-8"> Edit Venue: <br> {{$venue->name}}</h1>
 
                         
                         <div class="mb-6">
-                            <label for="text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Venue Name</label>
+                            <label for="text" class="block mb-2 text-sm font-medium text-gray-900 ">Your Venue Name</label>
                             <input type="text" value="{{old('name',$venue->name ?? null)}}" name="name" id="email" class="bg-gray-50 w-80 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 " placeholder="Party Plot, Banquery Hall , Wedding Hall" >
                             @foreach ($errors->get('name') as $error)
                                 <p class="text-red-600">{{$error}}</p>
@@ -36,7 +37,7 @@
                         </div>
 
                         <div class="mb-6">
-                            <label for="text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Image Name</label>
+                            <label for="text" class="block mb-2 text-sm font-medium text-gray-900 ">Your Image Name</label>
                             <input type="file" value="" name="image"  class="bg-gray-50 w-80 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 " placeholder="Wedding, Kitty kat, parties, lol deaths haha" >
                             @foreach ($errors->get('image') as $error)
                                 <p class="text-red-600">{{$error}}</p>
@@ -44,7 +45,7 @@
                         </div>
 
                         <div class="mb-6">
-                            <label for="capacity" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Venue Capacity</label>
+                            <label for="capacity" class="block mb-2 text-sm font-medium text-gray-900 ">Your Venue Capacity</label>
                             <input type="text" value="{{old('capacity',$venue->capacity ?? null)}}" id="capacity" name="capacity" class="bg-gray-50 w-80 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 " placeholder="5000 to 1000" >
                             @foreach ($errors->get('capacity') as $error)
                                 <p class="text-red-600">{{$error}}</p>
@@ -63,8 +64,8 @@
                         </div>
 
                         <div class="mb-6">
-                            <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an option</label>
-                            <select id="countries" name="event" class="bg-gray-50 w-80 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 ">Select an option</label>
+                            <select id="countries" name="event" class="bg-gray-50 w-80 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 ">
                                 <option value=""> Choose Your Event </option>
 
                                 @foreach ($events as $event)
@@ -78,8 +79,8 @@
                         </div>
 
                         <div class="mb-6">
-                            <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an option</label>
-                            <select id="countries" value="{{old('category')}}" name="category" class="bg-gray-50 w-80 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 ">Select an option</label>
+                            <select id="countries" value="{{old('category')}}" name="category" class="bg-gray-50 w-80 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 ">
                                 <option value=""> Choose Your Category </option>
 
                                 @foreach ($categories as $category)
@@ -94,11 +95,11 @@
 
 
                         <div class="mb-6">
-                            <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an option</label>
-                            <select id="countries" value="{{old('location')}}" name="location" class="bg-gray-50 w-80 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 ">Select an option</label>
+                            <select id="countries" value="{{old('location')}}" name="location" class="bg-gray-50 w-80 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 ">
                                 <option value=""> Choose Your location </option>
 
-                                @foreach ($categories as $location)
+                                @foreach ($locations as $location)
                                 
                                 <option @if($venue->location->id == $location->id) selected @endif value="{{$location->id}}"> {{$location->name}} </option>
                                 @endforeach
@@ -110,14 +111,14 @@
 
 
                         <div class="mb-6">
-                            <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Venue Price (*per Day) </label>
+                            <label for="price" class="block mb-2 text-sm font-medium text-gray-900 ">Your Venue Price (*per Day) </label>
                             <input type="number" value="{{old('price',$venue->price ?? null)}}" name="price" id="price" class="bg-gray-50 w-80 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 " placeholder="50000 " >
                             @foreach ($errors->get('price') as $error)
                                 <p class="text-red-600">{{$error}}</p>
                             @endforeach
                         </div>
 
-                        <button type="submit" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 ">
+                        <button type="submit" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300  shadow-lg shadow-blue-500/50  font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 ">
                             Update Venue
                         </button>
                         </form>

@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Venue;
 use Illuminate\Http\Request;
 
+
 class CategoryController extends Controller
 {
     /**

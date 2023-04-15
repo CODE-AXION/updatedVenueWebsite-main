@@ -32,45 +32,45 @@
 
             <section class="w-9/12 px-4 mx-auto ">
                 <div class="flex items-center gap-x-3 mt-16">
-                    <h2 class="text-lg font-medium text-gray-800 dark:text-white">User</h2>
+                    <h2 class="text-lg font-medium text-gray-800 ">User</h2>
 
-                    <span class="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full dark:bg-gray-800 dark:text-blue-400">{{$users->count()}} Users</span>
+                    <span class="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full ">{{$users->count()}} Users</span>
 
                 </div>
 
                 <div class="flex flex-col mt-6">
                     <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                         <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-                            <div class="overflow-hidden border  border-gray-200 dark:border-gray-700 md:rounded-lg">
-                                <table id="venuestable" class="min-w-full  bg-white divide-y divide-gray-200 dark:divide-gray-700">
-                                    <thead class="bg-gray-50  dark:bg-gray-800">
+                            <div class="overflow-hidden border  border-gray-200  md:rounded-lg">
+                                <table id="venuestable" class="min-w-full  bg-white divide-y divide-gray-200 ">
+                                    <thead class="bg-gray-50  ">
                                         <tr>
-                                            <th scope="col" class="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                            <th scope="col" class="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 ">
                                                 <div class="flex items-center gap-x-3">
 
                                                     <span>Id</span>
                                                 </div>
                                             </th>
 
-                                            <th scope="col" class="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                            <th scope="col" class="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 ">
                                                 <button class="flex items-center gap-x-2">
                                                     <span>User Name</span>
                                                 </button>
                                             </th>
 
-                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 ">
                                                 <button class="flex items-center gap-x-2">
                                                     <span>User Email</span>
                                                 </button>
                                             </th>
 
-                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 ">
                                                 <button class="flex items-center gap-x-2">
                                                     <span>Venues Events</span>
                                                 </button>
                                             </th>
 
-                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 ">
                                                 <button class="flex items-center gap-x-2">
                                                     <span>User Admin</span>
                                                 </button>
@@ -78,14 +78,10 @@
 
 
 
-                                            {{-- <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">Email address</th>
-
-                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">Teams</th> --}}
-
 
                                         </tr>
                                     </thead>
-                                    <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
+                                    <tbody class="bg-white divide-y divide-gray-200 ">
 
                                         @foreach ($users as $user)
 
@@ -101,13 +97,13 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">{{$user->name}}</td>
-                                            <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap"> {{$user->email}} </td>
+                                            <td class="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">{{$user->name}}</td>
+                                            <td class="px-4 py-4 text-sm text-gray-500  whitespace-nowrap"> {{$user->email}} </td>
 
-                                            <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap"> {{$user->is_admin == 777 ? 'Yes' : 'Not Admin'}} </td>
+                                            <td class="px-4 py-4 text-sm text-gray-500  whitespace-nowrap"> {{$user->is_admin == 777 ? 'Yes' : 'Not Admin'}} </td>
 
                                             <td class="px-12 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
-                                                <div class="inline-flex items-center px-3 py-1 rounded-full gap-x-2 bg-emerald-100/60 dark:bg-gray-800">
+                                                <div class="inline-flex items-center px-3 py-1 rounded-full gap-x-2 bg-emerald-100/60 ">
                                                     <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
 
                                                     <h2 class="text-sm font-normal text-emerald-500">Active</h2>

@@ -32,9 +32,9 @@
 
             <section class="w-9/12 px-4 mx-auto ">
                 <div class="flex items-center gap-x-3 mt-16">
-                    <h2 class="text-lg font-medium text-gray-800 dark:text-white">Orders</h2>
+                    <h2 class="text-lg font-medium text-gray-800 ">Orders</h2>
 
-                    <span class="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full dark:bg-gray-800 dark:text-blue-400">{{$checkoutVenues->count()}} Orders</span>
+                    <span class="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full ">{{$checkoutVenues->count()}} Orders</span>
 
            
                 </div>
@@ -42,82 +42,80 @@
                 <div class="flex flex-col mt-6">
                     <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                         <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-                            <div class="overflow-hidden border  border-gray-200 dark:border-gray-700 md:rounded-lg">
-                                <table id="venuestable" class="min-w-full  bg-white divide-y divide-gray-200 dark:divide-gray-700">
-                                    <thead class="bg-gray-50  dark:bg-gray-800">
+                            <div class="overflow-hidden border  border-gray-200  md:rounded-lg">
+                                <table id="venuestable" class="min-w-full  bg-white divide-y divide-gray-200 ">
+                                    <thead class="bg-gray-50  ">
                                         <tr>
-                                            <th scope="col" class="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                            <th scope="col" class="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 ">
                                                 <div class="flex items-center gap-x-3">
                                                
                                                     <span>Id</span>
                                                 </div>
                                             </th>
 
-                                            <th scope="col" class="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                            <th scope="col" class="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 ">
                                                 <button class="flex items-center gap-x-2">
                                                     <span>User Name</span>
                                                 </button>
                                             </th>
 
-                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 ">
                                                 <button class="flex items-center gap-x-2">
                                                     <span>No of. Guests</span>
                                                 </button>
                                             </th>
 
-                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 ">
                                                 <button class="flex items-center gap-x-2">
                                                     <span>Date</span>
                                                 </button>
                                             </th>
 
-                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 ">
                                                 <button class="flex items-center gap-x-2">
                                                     <span>User Email </span>
                                                 </button>
                                             </th>
 
-                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 ">
                                                 <button class="flex items-center gap-x-2">
                                                     <span>User Phone</span>
                                                 </button>
                                             </th>
 
-                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 ">
                                                 <button class="flex items-center gap-x-2">
                                                     <span>Event</span>
                                                 </button>
                                             </th>
 
-                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 ">
                                                 <button class="flex items-center gap-x-2">
                                                     <span>Plan</span>
                                                 </button>
                                             </th>
 
-                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 ">
                                                 <button class="flex items-center gap-x-2">
                                                     <span>Venue</span>
                                                 </button>
                                             </th>
 
-                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 ">
                                                 <button class="flex items-center gap-x-2">
                                                     <span>Service</span>
                                                 </button>
                                             </th>
                                             
-                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 ">
                                                 <button class="flex items-center gap-x-2">
                                                     <span>Amount</span>
                                                 </button>
                                             </th>
 
-                                            {{-- <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">Email address</th>
 
-                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">Teams</th> --}}
 
-                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                            <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 ">
                                                 <button class="flex items-center gap-x-2">
                                                     <span>Status</span>
                                                 </button>
@@ -126,7 +124,7 @@
                                             
                                         </tr>
                                     </thead>
-                                    <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
+                                    <tbody class="bg-white divide-y divide-gray-200 ">
                                         
                                         @foreach ($checkoutVenues as $order)
                                             
@@ -137,15 +135,15 @@
 
                                                     <div class="flex items-center gap-x-2">
                                                         <div>
-                                                            <h2 class="font-medium text-gray-800 dark:text-white ">{{$loop->iteration}}</h2>
+                                                            <h2 class="font-medium text-gray-800  ">{{$loop->iteration}}</h2>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="px-4 py-4 text-sm text-gray-500dark:text-gray-300 whitespace-nowrap">{{$order->name}}</td>
-                                            <td class="px-4 py-4 text-sm text-gray-500dark:text-gray-300 whitespace-nowrap"> {{$order->no_of_guests}} </td>
+                                            <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">{{$order->name}}</td>
+                                            <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap"> {{$order->no_of_guests}} </td>
 
-                                            <td class="px-4 py-4 text-sm text-gray-500dark:text-gray-300 whitespace-nowrap"> {{$order->date}} </td>
+                                            <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap"> {{$order->date}} </td>
 
                                             <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap"> {{$order->email}} </td>
                                             <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap"> {{$order->phone ?? ''}} </td>
@@ -156,7 +154,7 @@
                                             <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap"> {{$order->service->name ?? 'No Service Selected'}} </td>
                                             <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap"> {{$order->amount}} </td>
                                             <td class="px-12 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
-                                                <div class="inline-flex items-center px-3 py-1 rounded-full gap-x-2 bg-emerald-100/60 dark:bg-gray-800">
+                                                <div class="inline-flex items-center px-3 py-1 rounded-full gap-x-2 bg-emerald-100/60 ">
                                                     <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
 
                                                     <h2 class="text-sm font-normal text-emerald-500">Active</h2>

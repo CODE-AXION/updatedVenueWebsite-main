@@ -15,7 +15,7 @@
     <div class="ml-8 my-8"> <b> <a href="{{route('venue.home')}}"> Home </a> </b> \ <a href="{{route('venue.shop')}}"> Venue </a>  \ {{$venue->name}} </div>
     <div class="container py-10 flex mx-auto px-2 md:px-8 gap-4 flex-col lg:flex-row">
         <div class="w-full lg:w-8/12">
-            <img style="height: 395px" class="mx-auto object-cover" src="https://image.wedmegood.com/resized/1000X/uploads/member/443535/1665662591_DSC_8803.jpg?crop=40,3,2000,1125" alt="">
+            <img style="height: 395px" class="mx-auto object-cover" src="{{asset($venue->image)}}" alt="">
             <div class="mt-2  shadow-md border p-4">
                 <h1 class="text-xl"> {{$venue->name}} </h1>
                 <div class="mt-4">
@@ -120,8 +120,8 @@
                 <h1 class="text-lg font-semibold my-2">Do You Want To Include Plans Services ? </h1>
                 <label class="relative inline-flex items-center mb-4 cursor-pointer">
                     <input id="plan_services" type="checkbox" value="" class="sr-only peer">
-                    <div class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
-                    <span class="ml-3 text-sm font-medium text-gray-900 dark:text-gray-300">Yes/No</span>
+                    <div class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all  peer-checked:bg-blue-600"></div>
+                    <span class="ml-3 text-sm font-medium text-gray-900 ">Yes/No</span>
                   </label>
 
                 <div class="show-plans">
@@ -135,24 +135,25 @@
                     @php
                         $plan = Plan::where('id',$service->pivot->plan_id)->first();
                     @endphp
+                    <div class="flex items-center gap-2">
+                    <input type="radio" value="{{$plan->id}}" name="plan_id" class="peer/{{$plan->name}} " id="{{$plan->name}}">
+                        <label for="{{$plan->name}}" class=" w-full cursor-pointer shadow-md peer-checked/{{$plan->name}}:border-blue-500 border-2 rounded-md overflow-hidden flex items-start">
+                            <div class="bg-orange-500 h-36 py-2 text-center flex items-center">
+                                <span class="text-white block " style="-webkit-transform:rotate(270deg);">
 
-                    <input type="radio" value="{{$plan->id}}" name="plan_id" class="peer/{{$plan->name}} hidden" id="{{$plan->name}}">
-                    <label for="{{$plan->name}}" class=" w-full cursor-pointer shadow-md peer-checked/{{$plan->name}}:border-blue-500 border-2 rounded-md overflow-hidden flex items-start">
-                        <div class="bg-orange-500 h-20 py-2 text-center flex items-center">
-                            <span class="text-white block " style="-webkit-transform:rotate(270deg);">
 
+                                    {{$plan->name}}
 
-                                {{$plan->name}}
-
-                            </span>
-                        </div>
-                        <div class="ml-4">
-                            <h1 class=" font-semibold"> {{$service->name}} </h1>
-                            <h1 class="">Capacity: {{$service->capacity}}</h1>
-                            <h1 class="text-blue-500">₹ {{$service->price}} </h1>
-                        </div>
-                    </label>
-
+                                </span>
+                            </div>
+                            <div class="ml-4">
+                                <h1 class=" font-semibold"> {{$service->name}} </h1>
+                                <h1 class="">Capacity: {{$service->capacity}}</h1>
+                                <p>Descrp: {{$service->pivot->service_description}}</p>
+                                <h1 class="text-blue-500">₹ {{$service->pivot->service_price}} </h1>
+                            </div>
+                        </label>
+                    </div>
                     @endforeach
 
                     {{-- <input  type="radio" value="standard" name="plans" class="peer/standard hidden" id="standard">
@@ -186,10 +187,10 @@
                 @else
                 <button id="checkout" type="submit" class="block w-full text-white cursor-pointer bg-blue-600 py-2 px-5 rounded-md text-lg text-center mt-10">Checkout</button>
                 @endif
-            </form>.
+            </form>
 
             @if(request('checkout_pay') == 1)
-            <form action="{{route('venue.details',$venue->id)}}" method="POST" class="text-center p-2 bg-red-600 text-white rounded mx-auto mt-5">
+            <form action="{{route('venue.details',$venue->id)}}" method="GET" class="text-center p-2 bg-red-600 text-white rounded mx-auto mt-5">
                 <script
                     src="https://checkout.razorpay.com/v1/checkout.js"
                     data-key="rzp_test_9yMCbTx92bJVap"
@@ -214,54 +215,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
-        // $('#checkout-loading').hide()
-        // $('#checkout').click(function (e) {
-        //     e.preventDefault();
-
-        //     $.ajaxSetup({
-        //         headers: {
-        //             'X-CSRF-TOKEN': '{{csrf_token()}}'
-        //         }
-        //     })
-
-        //     $.ajax({
-
-        //         type: "POST",
-        //         url: "{{route('checkout')}}",
-        //         data: {
-
-        //             'occasion' : $('#occasion').val(),
-        //             'capacity' : $('#capacity').val(),
-        //             'date' : $('#date').val(),
-        //             'name' : $('#name').val(),
-        //             'phone' : $('#phone').val(),
-        //             'email' : $('#email').val(),
-        //         },
-        //         dataType: "json",
-        //         beforeSend: function() {
-        //             $('#checkout').hide()
-        //             $('#checkout-loading').show()
-
-        //         },
-        //         success: function (response) {
-        //             console.log(response);
-        //         },
-        //         complete: function() {
-        //             $('#checkout').show()
-        //             $('#checkout-loading').hide()
-        //             Swal.fire(
-        //             'Thank You !',
-        //             'Your Venue Has Been Booked !',
-        //             'success'
-        //             )
-        //         },
-
-
-        //     });
-
-        // });
-
-
+  
         togglePlanServices =  $('#plan_services')
 
         $('.show-plans').hide()

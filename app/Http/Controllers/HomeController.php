@@ -53,6 +53,11 @@ class HomeController extends Controller
             $location = Location::where('id',$request->location_id)->first();
 
             $venues = Venue::where('location_id',$request->location_id)->paginate(5);
+            
+        }elseif($request->has('search')){
+
+            $venues = Venue::where('name','like', '%' . $request->search . '%'  ?? '')->paginate(5);
+          
         }
         else{
             $venues = Venue::paginate(5);
@@ -67,6 +72,15 @@ class HomeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+     
+    public function search(Request $request)
+    {
+        
+        return redirect()->route('venue.shop',['search'=> $request->search]);
+    }
+
+
     public function homePage(Request $request)
     {
         $locations = Location::all();

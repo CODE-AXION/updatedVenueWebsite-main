@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Location;
 use App\Models\Venue;
 use Illuminate\Http\Request;
+use App\Services\ImageUploadService;
 
 class LocationController extends Controller
 {

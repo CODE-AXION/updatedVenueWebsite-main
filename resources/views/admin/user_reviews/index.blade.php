@@ -32,9 +32,9 @@
 
             <section class="w-9/12 px-4 mx-auto ">
                 <div class="flex items-center gap-x-3 mt-16">
-                    <h2 class="text-lg font-medium text-gray-800 dark:text-white">User Reviews</h2>
+                    <h2 class="text-lg font-medium text-gray-800 ">User Reviews</h2>
 
-                    <span class="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full dark:bg-gray-800 dark:text-blue-400">{{$reviews->count()}} Reviews</span>
+                    <span class="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full ">{{$reviews->count()}} Reviews</span>
 
            
                 </div>
@@ -42,24 +42,24 @@
                 <div class="flex flex-col mt-6">
                     <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                         <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-                            <div class="overflow-hidden border  border-gray-200 dark:border-gray-700 md:rounded-lg">
-                                <table id="venuestable" class="min-w-full  bg-white divide-y divide-gray-200 dark:divide-gray-700">
-                                    <thead class="bg-gray-50  dark:bg-gray-800">
+                            <div class="overflow-hidden border  border-gray-200  md:rounded-lg">
+                                <table id="venuestable" class="min-w-full  bg-white divide-y divide-gray-200 ">
+                                    <thead class="bg-gray-50  ">
                                         <tr>
-                                            <th scope="col" class="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                            <th scope="col" class="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 ">
                                                 <div class="flex items-center gap-x-3">
                                                
                                                     <span>Id</span>
                                                 </div>
                                             </th>
 
-                                            <th scope="col" class="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                            <th scope="col" class="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 ">
                                                 <button class="flex items-center gap-x-2">
                                                     <span>User Email</span>
                                                 </button>
                                             </th>
 
-                                            <th scope="col" class="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                            <th scope="col" class="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 ">
                                                 <button class="flex items-center gap-x-2">
                                                     <span>Review</span>
                                                 </button>
@@ -68,7 +68,7 @@
                                             
                                         </tr>
                                     </thead>
-                                    <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
+                                    <tbody class="bg-white divide-y divide-gray-200 ">
                                         
                                         @foreach ($reviews as $review)
                                             
@@ -79,13 +79,13 @@
 
                                                     <div class="flex items-center gap-x-2">
                                                         <div>
-                                                            <h2 class="font-medium text-gray-800 dark:text-white ">{{$loop->iteration}}</h2>
+                                                            <h2 class="font-medium text-gray-800  ">{{$loop->iteration}}</h2>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td class="px-4 py-4 text-sm text-gray-500dark:text-gray-300 whitespace-nowrap">{{$review->email}}</td>
-                                            <td class="px-4 py-4 text-sm text-gray-500dark:text-gray-300 whitespace-nowrap"> {{$review->name}} </td>
+                                            <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">{{$review->email}}</td>
+                                            <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap"> {{$review->name}} </td>
        
                                             <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap"> {{$review->created_at ??  ''}} </td>
                                            

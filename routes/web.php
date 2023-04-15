@@ -48,6 +48,9 @@ Route::get('/user/request/venue',[UserReviewController::class,'requestVenue'])->
 
 Route::post('/user/request/venue/store',[UserReviewController::class,'requestVenueStore'])->name('request.venue.store');
 
+Route::post('search',[HomeController::class,'search'])->name('search-products');
+
+
 Route::middleware('adminMiddlware')->group(function () {
 
 

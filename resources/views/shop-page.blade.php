@@ -37,14 +37,15 @@
                     
                 
                 <a href="{{route('venue.details',$venue->id)}}" class="w-full  mt-4 flex flex-wrap md:flex-nowrap items-start gap-4 p-4 shadow-md">
-                    <div class="rounded-md w-full md:w-80 m-auto overflow-hidden">
-                        <img class="w-full object-cover" src="https://image.wedmegood.com/resized/450X/uploads/member/2366606/1633744428_DSC_9645.JPG?crop=16,239,2006,1128" alt="">
-                    </div>
+                    
+                  
+                        <img class="md:w-64 object-cover" src="{{asset($venue->image)}}" alt="">
+                   
 
                     <div>
                         <h1 class="font-semibold text-slate-700 text-xl">{{$venue->name}}</h1>
 
-                        <div class="flex items-center flex-wrap md:flex-nowrap mt-2 gap-4">
+                        <div class="flex items-center flex-wrap md:flex-nowrap mt-2 w-full gap-4">
                             <div class="flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="w-5 h-5 fill-slate-400 bi bi-geo-alt-fill" viewBox="0 0 16 16">
                                     <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>

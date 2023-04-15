@@ -24,7 +24,7 @@
                 
                     <h1 class="text-3xl mt-4 mb-8"> Create Location</h1>
                     <div class="mb-6">
-                        <label for="text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Location Name</label>
+                        <label for="text" class="block mb-2 text-sm font-medium text-gray-900 ">Your Location Name</label>
                         <input type="text" value="{{old('name')}}" name="name" id="email" class="bg-gray-50 w-80 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 " placeholder="Party Plots, Halls, Wedding Plots ..." >
                         @foreach ($errors->get('name') as $error)
                             <p class="text-red-600">{{$error}}</p>
@@ -32,7 +32,7 @@
                     </div>
 
                     <div class="mb-6">
-                        <label for="text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Image Name</label>
+                        <label for="text" class="block mb-2 text-sm font-medium text-gray-900 ">Your Image Name</label>
                         <input type="file" value="" name="image"  class="bg-gray-50 w-80 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 " placeholder="Wedding, Kitty kat, parties, lol deaths haha" >
                         @foreach ($errors->get('image') as $error)
                             <p class="text-red-600">{{$error}}</p>
@@ -40,7 +40,7 @@
                     </div>
 
 
-                    <button type="submit" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 ">
+                    <button type="submit" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300  shadow-lg shadow-blue-500/50  font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 ">
                         Create Location
                     </button>
 

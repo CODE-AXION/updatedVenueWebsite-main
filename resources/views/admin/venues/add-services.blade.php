@@ -28,8 +28,8 @@
 
 
                         <div class="mb-6">
-                            <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Choose Your Plan</label>
-                            <select id="countries" value="{{old('plan_id')}}" name="plan_id" class="bg-gray-50 w-80 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 ">Choose Your Plan</label>
+                            <select id="countries" value="{{old('plan_id')}}" name="plan_id" class="bg-gray-50 w-80 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 ">
                                 <option value=""> Choose Your Plan </option>
 
                                 @foreach ($plans as $plan)
@@ -44,8 +44,8 @@
                         </div>
         
                         <div class="mb-6">
-                            <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Choose Your Service</label>
-                            <select id="countries"  name="service_id" class="bg-gray-50 w-80 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 e">Choose Your Service</label>
+                            <select id="countries"  name="service_id" class="bg-gray-50 w-80 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5  ">
                                 <option value=""> Choose Your Service </option>
 
                                 @foreach ($services as $service)
@@ -69,14 +69,14 @@
                         </div>
 
                         <div class="mb-6">
-                            <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"> Price  </label>
+                            <label for="price" class="block mb-2 text-sm font-medium text-gray-900 "> Price  </label>
                             <input type="number" name="service_price" value="{{old('service_price')}}" id="price" class="bg-gray-50 w-80 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 " placeholder="50000 " >
                             @foreach ($errors->get('service_price') as $error)
                                 <p class="text-red-600" > {{$error}} </p>
                             @endforeach
                         </div>
 
-                        <button type="submit" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 ">
+                        <button type="submit" class="text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300  shadow-lg shadow-blue-500/50  font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 ">
                             Add Service
                         </button>
                     </form>

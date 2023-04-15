@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Models\Service;
 use App\Models\Plan;
 use App\Models\Location;
+use App\Services\ImageUploadService;
 
 class VenueController extends Controller
 {

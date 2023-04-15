@@ -16,7 +16,7 @@
                 <path d="M3 1.5h1v1H3a1 1 0 0 0-1 1V14a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V3.5a1 1 0 0 0-1-1h-1v-1h1a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3.5a2 2 0 0 1 2-2Z"/>
                 <path d="M8 6.982C9.664 5.309 13.825 8.236 8 12 2.175 8.236 6.336 5.31 8 6.982Z"/>
             </svg>
-            Write a Review
+            Request a Venue
         </a>
         <div class="text-white">
             @guest
@@ -62,7 +62,9 @@
                         use App\Models\Event;
                         $events = Event::all();
                     @endphp
+                    
                     <h1 class="text-xl font-semibold text-slate-800">Events</h1>
+
                     @foreach ($events as $event)
                     <div class="w-full">
                         <a href="{{route('venue.shop',['event_id'=> $event->id])}}" class="text-pink-500 font-semibold text-base">{{$event->name}} </a>
@@ -95,13 +97,21 @@
     </div>
 
     <div class="flex justify-between mx-4 md:mx-0 md:justify-right md:mr-4 items-center">
-        <div class="bg-pink-700 p-2 rounded-full">
+
+        <div class="bg-pink-700 p-2 rounded-full flex items-center h-8">
+
+            <div class=" w-full ">
+                <form action="{{route('search-products')}}" method="POST">
+                    @csrf
+                    <input type="search" name="search" id="" class="block text-white text-sm  bg-transparent border-0 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+                </form>
+            </div>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="fill-white w-4 h-4 bi bi-search-heart" viewBox="0 0 16 16">
                 <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z"/>
                 <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z"/>
             </svg>
         </div>
-
+        
         <div class="text-white px-8 py-0.5 rounded-xl bg-pink-700 ml-4 text-sm">
             @guest
 
@@ -109,6 +119,10 @@
             @endguest
 
             @auth
+
+            @if (Auth::user()->is_admin == 777)
+                <a href="{{route('admin.dashboard')}}"> Super Admin </a> 
+            @endif
                 {{Auth::user()->name}}
 
                 <form action="{{route('logout')}}" method="POST">
